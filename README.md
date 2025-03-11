@@ -19,4 +19,4 @@ This tool modifies the torrc file and may affect your Tor network behavior. Use 
 ### Little overview
 
 Load torrc File -> opens GUI -> Select Countries -> If path is correct (code should be in first folder - Tor Browser) it updates the exit nodes (if file is not found it will ask for new path to the torrc file and save it in .json file)
-![alt text](https://imgur.com/a/QaIUbei)
+![alt text](https://i.imgur.com/SonSxEP.png)
