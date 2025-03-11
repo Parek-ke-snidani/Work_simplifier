@@ -1,6 +1,6 @@
 # Work repository
 
-Code I managed to write at my job to simplify my tasks. :-)
+Code I managed to write to simplify my tasks. :-)
 
 ## Download_IMG_Napojse
 
