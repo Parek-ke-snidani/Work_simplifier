@@ -16,7 +16,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import re
 
 # Cesta k geckodriveru (zadejte správnou cestu k vašemu geckodriveru)
-geckodriver_path = "Path//to//geckondriver.exe"
+geckodriver_path = "Path//to//geckodriver.exe"
 
 # Nastavení pro Firefox (Geckodriver) a Tor proxy
 tor_proxy = "127.0.0.1:9050"  # Tor běží na localhostu na portu 9050
