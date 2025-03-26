@@ -23,4 +23,4 @@ Load torrc File -> opens GUI -> Select Countries -> If path is correct (code sho
 
 ## HTML code for colour variants to product description in shoptet
 
-We use html code for showing all color varians of the same product in product description. So I made little [simplifier](https://github.com/Parek-ke-snidani/Work_simplifier/tree/master/HTML%20code%20color%20variants%20to%20description) for each step.
+We use html code for showing all color varians of the same product in product description. So I made little [simplifier](https://github.com/Parek-ke-snidani/Work_simplifier/tree/master/HTML_code_color_variants_to_description) for each step.
