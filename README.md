@@ -21,7 +21,6 @@ This tool modifies the torrc file and may affect your Tor network behavior. Use 
 Load torrc File -> opens GUI -> Select Countries -> If path is correct (code should be in first folder - Tor Browser) it updates the exit nodes (if file is not found it will ask for new path to the torrc file and save it in .json file)
 ![alt text](https://i.imgur.com/SonSxEP.png)
 
-## HTML code fro colour variants to product description in shoptet
-We use html code for showing all color varians of the same product in product description. So I made little simplifier for each step
-This site was built using [GitHub Pages](https://pages.github.com/)
+## HTML code for colour variants to product description in shoptet
 
+We use html code for showing all color varians of the same product in product description. So I made little [simplifier](https://github.com/Parek-ke-snidani/Work_simplifier/tree/master/HTML%20code%20color%20variants%20to%20description) for each step.
