@@ -9,9 +9,9 @@ You will need code (kód produktu), pairCode, name (název produktu), and descri
 In the app paste URL addresses of category pages to input boxes and click **Get URLs** button. It will copy only visible produtcs
 
 <p align="center">
-  <img src="pictures/picture1.png" width="45%">
+  <img src="pictures/picture1.png" width="35%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="pictures/picture2.png" width="45%">
+  <img src="pictures/picture2.png" width="35%">
 </p>
 
 It will create new excel file with names and urls named **shoptet_product.xlsx**.
