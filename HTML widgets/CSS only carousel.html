@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">  
+</head>
+<body>
+<style>
+    @keyframes tonext {
+      75% { transform: translateX(0%); }
+      95% { transform: translateX(-100%); }
+      98% { transform: translateX(-100%); }
+      99% { transform: translateX(0%); }
+    }
+    @keyframes tonext2 {
+      75% { transform: translateX(-100%); }
+      95% { transform: translateX(-200%); }
+      98% { transform: translateX(-200%); }
+      99% { transform: translateX(-100%); }
+    }
+    @keyframes tonext3 {
+      75% { transform: translateX(-200%); }
+      95% { transform: translateX(-300%); }
+      98% { transform: translateX(-300%); }
+      99% { transform: translateX(-200%); }
+    }
+    @keyframes tostart {
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-400%); }
+      98% { transform: translateX(-400%); }
+      99% { transform: translateX(0%); }
+    }
+
+    @keyframes snap {
+      96%, 100% { scroll-snap-align: center; }
+      97%, 99% { scroll-snap-align: none; }
+    }
+
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+  width: 100%;
+}
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  overflow-anchor: none;
+}
+
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  counter-increment: item;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* or 'contain' if you want to see full image without cropping */
+}
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel__caption {
+  color: #000 !important;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0cap;
+}
+
+.carousel__header {
+  color: #000 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin: 0cap;
+}
+  </style>
+
+<section id="carousel" class="carousel" aria-label="Gallery">
+  <ol class="carousel__viewport">
+    <li id="carousel__slide01" class="carousel__slide">
+      <img src="https://image.pobo.space/images/obtz5aodpccl/jjKAAobs60L3Ju8xXJQU-md.gif" alt="walk assist" style="width: 100%; height: auto; display: block;">
+      <p class="carousel__header">Walk assist</p>
+      <p class="carousel__caption">Vysoký točivý moment a citlivost pohonné jednotky Avinox účinně snižuje obtížnost tlačení kola do kopce.</p>
+      <div class="carousel__snapper">
+        <a href="#carousel__slide05" class="carousel__prev">Go to last slide</a>
+        <a href="#carousel__slide02" class="carousel__next">Go to next slide</a>
+      </div>
+    </li>
+    <li id="carousel__slide02" class="carousel__slide">
+      <img src="https://image.pobo.space/images/obtz5aodpccl/ouDZg0CMqTB50y5QV2Cr-md.gif" alt="ato hold" style="width: 100%; height: auto; display: block;">
+      <p class="carousel__header">Auto hold</p>
+      <p class="carousel__caption">Když jezdec tlačí kolo, kolo se může zastavit ve svahu, aniž by se sposunulo zpět, což zvyšuje bezpečnost. Jezdci nyní mohou snadno ovládat rovnováhu kola pouze jednou rukou.</p>
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide01" class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide03" class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide03" tabindex="0" class="carousel__slide">
+      <img src="https://image.pobo.space/images/obtz5aodpccl/xAucHSBapNOQVi1SWKVy-md.gif" alt="Hill start" style="width: 100%; height: auto; display: block;">
+      <p class="carousel__header">Hill start asssist</p>
+      <p class="carousel__caption">
+Při rozjezdu do svahu poskytuje pohonná jednotka Avinox dodatečný točivý moment, který působí proti gravitaci a umožňuje jezdci snadný rozjezd do kopce.</p>
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide02" class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide04" class="carousel__next">Go to next slide</a>
+    </li>
+    
+    <li id="carousel__slide04" tabindex="0" class="carousel__slide">
+      <img src="https://image.pobo.space/images/obtz5aodpccl/035Wa7QrmC9JZZXju2j3-md.gif" alt="stationary shifting" style="width: 100%; height: auto; display: block;">
+      <p class="carousel__header">Stationary shifting</p>
+      <p class="carousel__caption">
+Podporuje rychlé řazení i při zastavení. Vícestupňové řazení lze dosáhnout bez opakovaného mačkání páčky.</p>
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide03" class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide01" class="carousel__next">Go to first slide</a>
+    </li>
+      </ol>
+
+ </section>
+
+
+</body>
+</html>
