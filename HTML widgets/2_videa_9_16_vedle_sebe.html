@@ -1,0 +1,38 @@
+<style>
+.video-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+margin-bottom: 40px;
+}
+
+.video-wrapper {
+  flex: 1 1 300px;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+
+<div class="video-container">
+  <div class="video-wrapper">
+    <video preload="metadata" autoplay muted loop playsinline>
+      <source src="https://www.bikemax.cz/user/documents/upload/obr%C3%A1zky%20%C4%8Dl%C3%A1nky%20homepage/full_Crussis_Test_Vid.mp4">
+      Váš prohlížeč nepodporuje video tag.
+    </video>
+  </div>
+  <div class="video-wrapper">
+    <video preload="metadata" autoplay muted loop playsinline>
+      <source src="https://www.bikemax.cz/user/documents/upload/obr%C3%A1zky%20%C4%8Dl%C3%A1nky%20homepage/5_Crussis_Test_Vid.mp4">
+      Váš prohlížeč nepodporuje video tag.
+    </video>
+  </div>
+</div>

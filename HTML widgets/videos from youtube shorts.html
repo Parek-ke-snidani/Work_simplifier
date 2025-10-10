@@ -1,0 +1,121 @@
+<style>
+.video-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-embed {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<section class="video-gallery">
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/lkA7fTBwcvM?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&playlist=lkA7fTBwcvM"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/-KajfQmFICc?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&playlist=-KajfQmFICc"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/B4EbkykmgSY?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&start=0&end=4&playlist=B4EbkykmgSY"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/5ecvP1tkOHs?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&start=1&end=4&playlist=5ecvP1tkOHs"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/6s0ly-NWwz8?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&playlist=6s0ly-NWwz8"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/GnW5Uyn6bi8?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1&playlist=GnW5Uyn6bi8"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
